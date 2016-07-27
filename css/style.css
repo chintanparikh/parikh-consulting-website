@@ -1,9 +1,10 @@
 html, body {
   height: 100%;
-  background: #101010;
-  color: white;
+  background: white;
+  color: black;
   margin: 0;
   padding: 0;
+  font-family: Poppins, sans-serif;
 }
 
 .brand {
@@ -21,6 +22,9 @@ html, body {
   line-height: 44px;
   padding-left: 10px;
   font-weight: 400;
+  font-size: 18px;
+  display: inline;
+  color: white;
 }
 
 .full-height {
@@ -37,6 +41,7 @@ html, body {
   padding: 10px 20px;
   border-radius: 999px;
   margin: 0 10px;
+  font-size: 16px;
 }
 
 a.button {
@@ -56,6 +61,7 @@ a.button {
   line-height: 44px;
   height: 44px;
   padding: 0 10px;
+  font-size: 16px;
 }
 
 #nav a {
@@ -88,20 +94,93 @@ canvas {
 
 #splash .content {
   position: relative;
-  top: 40%;
+  top: 42%;
   transform: translateY(-100%);
+  color: white;
+  line-height: 1;
 }
 
 #splash .main {
-  font-family: Lora, sans-serif;
+  font-family: Lora, serif;
   font-size: 35px;
   text-align: center;
+  line-height: 1.3;
 }
 
 #splash .buttons {
   text-align: center;
+  margin-top: 30px;
 }
 
 #splash .button {
   color: #215661;
+}
+
+#recent-work .work-element{
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  margin: 0;
+}
+
+#seedfeed {
+  background: url("../img/seedfeed.jpg");
+}
+
+
+#recent-work-heading{
+  text-align: center;
+  font-family: Lora, serif;
+  padding: 80px;
+  margin: 0;
+  font-size: 35px;
+  color: #043c5a;
+  font-weight: 100;
+}
+
+#recent-work .info {
+  display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+    width: 350px;
+    height: 250px;
+    max-width: 100%;
+    text-align: right;
+    background: rgba(255, 255, 255, 0.9);
+    margin-top: 100px;
+}
+
+#recent-work .info:before {
+  content: '';
+  display: inline-block;
+  height: 50%;
+  vertical-align: middle
+}
+
+#recent-work .info a {
+    font-family: "Brandon Grotesque";
+    font-weight: 500;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    padding: .9375rem 0;
+    font-size: 28px;
+    color: black;
+}
+
+#recent-work .info a:hover {
+    text-decoration: none;
+}
+
+#recent-work .info .description {
+  font-family: Lora;
+  color: black;
+  font-size: 19px;
+}
+
+#recent-work .info-inner {
+  display: inline;
+  padding: 0 5rem;
 }
