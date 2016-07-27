@@ -139,7 +139,7 @@ canvas {
 }
 
 #recent-work .info {
-  display: inline-block;
+  display: table;
     vertical-align: middle;
     position: relative;
     z-index: 1;
@@ -181,6 +181,6 @@ canvas {
 }
 
 #recent-work .info-inner {
-  display: inline;
-  padding: 0 5rem;
+  display: table-cell;
+  vertical-align: middle;
 }
