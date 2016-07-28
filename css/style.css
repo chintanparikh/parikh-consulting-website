@@ -7,6 +7,10 @@ html, body {
   font-family: Poppins, sans-serif;
 }
 
+a {
+  color: inherit;
+}
+
 .brand {
   font-size: 1.125em;
   font-weight: 600;
@@ -35,6 +39,12 @@ html, body {
   float: right;
 }
 
+.bezier-transform {
+  transition: opacity .3s,-webkit-transform 1s cubic-bezier(.19,1,.22,1);
+  transition: transform 1s cubic-bezier(.19,1,.22,1),opacity .3s;
+  transition: transform 1s cubic-bezier(.19,1,.22,1),opacity .3s,-webkit-transform 1s cubic-bezier(.19,1,.22,1);
+}
+
 .button {
   background: white;
   color: black;
@@ -47,6 +57,18 @@ html, body {
 a.button {
   text-decoration: none;
   font-family: Poppins, sans-serif;
+  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out; /** Chrome & Safari **/
+  -moz-transition: all 0.1s ease-in-out; /** Firefox **/
+  -o-transition: all 0.1s ease-in-out; /** Opera **/
+}
+
+a.button:hover{
+  padding: 12px 22px;
+  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out; /** Chrome & Safari **/
+  -moz-transition: all 0.1s ease-in-out; /** Firefox **/
+  -o-transition: all 0.1s ease-in-out; /** Opera **/
 }
 
 #nav {
@@ -54,6 +76,10 @@ a.button {
   font-family: 'Poppins';
   padding: 20px 40px;
   margin: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
 }
 
 #nav li {
@@ -67,10 +93,22 @@ a.button {
 #nav a {
   text-decoration: none;
   color: white;
+  position: relative;
+  bottom: 0;
+
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out; /** Chrome & Safari **/
+  -moz-transition: all 0.2s ease-in-out; /** Firefox **/
+  -o-transition: all 0.2s ease-in-out; /** Opera **/
 }
 
 #nav a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out; /** Chrome & Safari **/
+  -moz-transition: all 0.2s ease-in-out; /** Firefox **/
+  -o-transition: all 0.2s ease-in-out; /** Opera **/
+  bottom: 3px;
 }
 
 canvas {
@@ -94,8 +132,8 @@ canvas {
 
 #splash .content {
   position: relative;
-  top: 42%;
-  transform: translateY(-100%);
+  top: 50%;
+  transform: translateY(-50%);
   color: white;
   line-height: 1;
 }
@@ -116,19 +154,23 @@ canvas {
   color: #215661;
 }
 
-#recent-work .work-element{
-  height: 400px;
-  width: 100%;
-  background-size: cover;
-  margin: 0;
+#recent-work:after, #contact:before{
+  display: none;
 }
 
 #seedfeed {
   background: url("../img/seedfeed.jpg");
 }
 
+#cappio {
+  background: url("../img/cappio.jpg");
+}
 
-#recent-work-heading{
+#startup-exchange {
+  background: url("../img/startup-exchange.jpg");
+}
+
+h2{
   text-align: center;
   font-family: Lora, serif;
   padding: 80px;
@@ -138,49 +180,114 @@ canvas {
   font-weight: 100;
 }
 
-#recent-work .info {
-  display: table;
-    vertical-align: middle;
-    position: relative;
-    z-index: 1;
-    width: 350px;
-    height: 250px;
-    max-width: 100%;
-    text-align: right;
-    background: rgba(255, 255, 255, 0.9);
-    margin-top: 100px;
+.work-element {
+  height: 500px;
+  color: #3e3d3d;
+  -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */  
+  -moz-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -o-transition: .5s ease-in-out;
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
 }
 
-#recent-work .info:before {
-  content: '';
-  display: inline-block;
-  height: 50%;
-  vertical-align: middle
+.work-element:hover {
+  -webkit-filter: grayscale(0%); /* Chrome, Safari, Opera */  
+  -moz-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  filter: grayscale(0%);
+  -o-transition: .5s ease-in-out;
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+
 }
 
-#recent-work .info a {
-    font-family: "Brandon Grotesque";
-    font-weight: 500;
-    font-size: 28px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    position: relative;
-    padding: .9375rem 0;
-    font-size: 28px;
-    color: black;
+.work-element .info {
+  width: 400px;
+  height: 300px;
+  margin-top: 100px;
+  margin-left: 60%;
 }
 
-#recent-work .info a:hover {
-    text-decoration: none;
+.work-element .background {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
 }
 
-#recent-work .info .description {
-  font-family: Lora;
+.work-element:hover {
+  transition: all 1s ease;
   color: black;
-  font-size: 19px;
 }
 
-#recent-work .info-inner {
-  display: table-cell;
-  vertical-align: middle;
+.work-element:hover .background {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+}
+
+.work-element .info:hover .info-inner a {
+  transition: all 1s ease;
+  margin-right: 20px;
+}
+
+.work-element .info .info-inner {
+  overflow: hidden;
+}
+
+.work-element .info .info-inner a {
+  transition: all 1s ease;
+  margin-right: 0px;
+}
+
+.work-element .info .info-inner {
+  display: inline-block;
+  position: relative;
+  bottom: 300px;
+  left: 0;
+  text-align: right;
+  width: 300px;
+  float: right;
+  margin-right: 50px;
+  margin-top: 150px;
+  transform: translate(0, -50%);
+}
+
+.work-element .info a{
+  font-family: "Brandon Grotesque";
+  color: black;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  padding: .9375rem 0;
+  left: 25px;
+}
+
+.work-element .info a i {
+  font-size: 37px;
+  position: relative;
+  top: 2px;
+  right: 5px;
+  color: #3e3d3d;
+}
+
+.work-element .info a:hover {
+  text-decoration: none;
+}
+
+.work-element .description {
+  font-family: Lora;
+  font-size: 18px;
 }
