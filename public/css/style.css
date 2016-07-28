@@ -248,16 +248,17 @@ h2{
 }
 
 .work-element .info .info-inner {
-  display: inline-block;
-  position: relative;
-  bottom: 300px;
-  left: 0;
-  text-align: right;
-  width: 300px;
-  float: right;
-  margin-right: 50px;
-  margin-top: 150px;
-  transform: translate(0, -50%);
+  display: flex;
+    position: relative;
+    bottom: 300px;
+    left: 0;
+    text-align: right;
+    margin-right: 50px;
+    margin-top: 150px;
+    transform: translate(0, -50%);
+    flex-direction: column;
+    padding-right: 0;
+    align-items: flex-end;
 }
 
 .work-element .info a{
@@ -271,8 +272,10 @@ h2{
   text-transform: uppercase;
   letter-spacing: 3px;
   position: relative;
-  padding: .9375rem 0;
   left: 25px;
+  
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .work-element .info a i {
