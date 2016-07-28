@@ -1,7 +1,7 @@
 (function() {
           var COLORS, FRICTION, GRAVITY, MAX_FORCE, NUM_PARTICLES, Particle, TAIL_LENGTH;
 
-          NUM_PARTICLES = 260;
+          NUM_PARTICLES = 100;
 
           TAIL_LENGTH = 8;
 
