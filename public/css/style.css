@@ -395,6 +395,10 @@ h2{
     #nav {
       padding: 20px 10px
     }
+
+    #nav h1 {
+      display: none;
+    }
 }
 
 @media only screen and (max-device-width: 768px){
