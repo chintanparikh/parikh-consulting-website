@@ -399,6 +399,10 @@ h2{
     #nav h1 {
       display: none;
     }
+
+    #contact .form-group {
+      min-width: 90%;
+    }
 }
 
 @media only screen and (max-device-width: 768px){
