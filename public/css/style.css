@@ -167,6 +167,10 @@ canvas {
   display: none;
 }
 
+#vyrtex {
+  background: url("../img/vyrtex.jpg");
+}
+
 #seedfeed {
   background: url("../img/seedfeed.jpg");
 }
