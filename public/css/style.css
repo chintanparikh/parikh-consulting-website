@@ -167,6 +167,9 @@ canvas {
   display: none;
 }
 
+#qurbani {
+  background: url("../img/qurbani.jpg");
+}
 #vyrtex {
   background: url("../img/vyrtex.jpg");
 }
